@@ -1,0 +1,11 @@
+<div class="contents-row">
+  <% @posts.each do |post| %>
+    <div class="content_post" >
+      <div class="post">
+        <p><%= post.text %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# style="background-image: url(<%= post.image %>);" %>
