@@ -10,6 +10,13 @@
             <%= post.name %>
           </div>
           <p><%= post.text %></p>
+          <ul class="tag">
+            <li class="tag-list">
+              <% post.tags.each do |tag| %>
+                #<%= tag.tagname %>
+              <% end%>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

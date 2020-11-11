@@ -1,12 +1,19 @@
 <div class="new-post">
   <div class="new-post-form">
     <div class="post-form">
-      <%= form_with(model: @post, local: true) do |f| %>
+      <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
       <%= render "devise/shared/error_messages", model: f.object%>
         <div class="post-form">
           <div class="field">
             <%= f.label :image,"Image", class:"post-new-label"%><br />
             <%= f.file_field :image %>
+          </div>
+
+          <div class="tag-field", id='tag-field'>
+            <%= f.label :tagname, "タグ" %>
+            <%= f.text_field :tagname, class:"input-tag" %>
+          </div>
+          <div id="search-result">
           </div>
 
           <div class="field">

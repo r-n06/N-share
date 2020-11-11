@@ -1,26 +1,33 @@
-.contents {
+.user-show {
   height: 100vh;
   width: 100%;
   background-color: rgb(247, 229, 247);
+
 }
 
-.post{
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
+.user-show-info {
+  width: 100%;
+  height: 100vh;
+  margin-top: 50px;
 }
 
-.content_post{
+.user-show-nickname {
+  font-size: 30px;
+  color: rgb(150, 79, 243);
+  font-weight: 600;
+  padding-left: 100px;
+}
+
+.user-content_post{
   height: 500px;
   width: 700px;
   display: flex;
   justify-content: center;
-  
 }
 
-.post-each {
-  height: 450px;
-  width: 700px;
+.user-post-each {
+  height: 400px;
+  width: 500px;
   text-align: center;
   padding-top: 30px;
   border: 2px solid rgb(196, 74, 165);
@@ -28,24 +35,16 @@
   table-layout: fixed;
 }
 
-.post-image{
-  height: 300px;
+.user-post-image{
+  height: 250px;
   width: 400px;
 }
 
-.name {
+.user-post-name {
   font-size: 30px;
 }
 
 p {
   overflow-wrap: break-word;
   word-wrap: break-word;
-}
-
-.tag{
-  font-size: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  list-style: none;
 }

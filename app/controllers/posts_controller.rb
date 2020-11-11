@@ -3,16 +3,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :edit, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
-    @post = Post.new
+    @post = PostsTag.new
   end
   
   def create
-    @post = Post.new(post_params)
-    if @post.save
+    @post = PostsTag.new(post_params)
+    if @post.valid?
+      @post.save
       redirect_to root_path
     else
       render :new
@@ -39,10 +40,16 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    return nill if params[:keyword] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:text, :name, :image).merge(user_id: current_user.id)
+    params.require(:posts_tag).permit(:text, :name, :image, :tagname).merge(user_id: current_user.id)
   end
 
   def move_to_root_path
