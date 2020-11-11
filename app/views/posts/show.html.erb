@@ -10,8 +10,13 @@
           </div>
       </div>
     </div>
-    <div class="edit-btn">
-      <%= link_to 'Edit', edit_post_path %>
+    <div class="show-btns">
+      <div class="edit-btn">
+        <%= link_to 'Edit', edit_post_path %>
+      </div>
+      <div class="delete-btn">
+        <%= link_to 'Delete', post_path(@post.id), mathod: :delete %>
+      </div>
     </div>
   </div>
 </div>

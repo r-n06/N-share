@@ -2,6 +2,7 @@
   <div class="new-post-form">
     <div class="post-form">
       <%= form_with(model: @post, local: true) do |f| %>
+      <%= render "devise/shared/error_messages", model: f.object%>
       <div class="post-form">
         <div class="field">
           <%= f.label :image,"Image", class:"post-new-label"%><br />
@@ -20,7 +21,7 @@
       </div>
       <div class="post-send">
         <div class="send-btn">
-          <%= link_to 'Update',  post_path %>
+          <%= f.submit "Update", class:"submit-btn" %>
         </div>
       </div>
       <% end %>
