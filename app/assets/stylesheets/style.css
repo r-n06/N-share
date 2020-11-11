@@ -17,6 +17,7 @@
 }
 
 .create-post{
+  font-size: 20px;
   padding: 10px;
   border: 1px solid rgb(196, 74, 165);
 }
@@ -24,4 +25,13 @@
 a {
   color: rgb(196, 74, 165);
   text-decoration: none;
+}
+
+.user-nickname, .logout {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.login, .sign-up {
+  font-size: 20px;
 }
