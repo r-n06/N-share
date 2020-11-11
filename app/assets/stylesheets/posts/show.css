@@ -1,0 +1,7 @@
+.show-post {
+  height: 500px;
+  width: 700px;
+  text-align: center;
+  padding-top: 30px;
+  table-layout: fixed;
+}
