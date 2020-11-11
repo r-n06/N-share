@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  background-color: rgb(247, 229, 247);
 }
 
 .new-post-form {
@@ -38,5 +39,14 @@
 .post-new-text {
   height: 200px;
   width: 400px;
-  
+}
+
+.send-btn {
+  font-size: 20px;
+  font-weight: 600;
+  height: 50px;
+  width: 150px;
+  padding-top: 15px;
+  text-align: center;
+  border: 1px solid rgb(196, 74, 165);
 }

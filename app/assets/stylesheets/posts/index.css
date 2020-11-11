@@ -1,6 +1,7 @@
 .contents {
   height: 100vh;
   width: 100%;
+  background-color: rgb(247, 229, 247);
 }
 
 .post{
@@ -18,11 +19,12 @@
 }
 
 .post-each {
-  height: 500px;
+  height: 450px;
   width: 700px;
   text-align: center;
   padding-top: 30px;
   border: 2px solid rgb(196, 74, 165);
+  background-color: white;
   table-layout: fixed;
 }
 
