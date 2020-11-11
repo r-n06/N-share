@@ -1,0 +1,22 @@
+<div class="contents">
+  <div class="post">
+    <div class="content-post">
+      <div class="show-post">
+        <%= image_tag @post.image, class:"post-image" %>
+          <div class="name">
+            <%= @post.name %>
+          </div>
+          <p><%= @post.text %></p>
+          </div>
+      </div>
+    </div>
+    <div class="show-btns">
+      <div class="edit-btn">
+        <%= link_to 'Edit', edit_post_path %>
+      </div>
+      <div class="delete-btn">
+        <%= link_to 'Delete', post_path(@post.id), mathod: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
