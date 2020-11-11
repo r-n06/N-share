@@ -1,17 +1,35 @@
-.contents-row{
+.contents {
   height: 100vh;
   width: 100%;
+}
+
+.post{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .content_post{
   height: 500px;
   width: 700px;
+  display: flex;
+  justify-content: center;
+  
 }
 
-.post{
-  height: 100%;
-  width: 100%;
+.post-each {
+  height: 500px;
+  width: 700px;
   text-align: center;
+  padding-top: 30px;
+  border: 2px solid rgb(196, 74, 165);
+}
+
+.post-image{
+  height: 300px;
+  width: 400px;
+}
+
+.name {
+  font-size: 30px;
 }
