@@ -7,6 +7,14 @@
             <%= @post.name %>
           </div>
           <p><%= @post.text %></p>
+          <ul class="tag">
+            <li class="tag-list">
+              <% @post.tags.each do |tag| %>
+                #<%= tag.tagname %>
+              <% end%>
+            </li>
+          </ul>
+
           </div>
       </div>
     </div>
@@ -15,7 +23,7 @@
         <%= link_to 'Edit', edit_post_path %>
       </div>
       <div class="delete-btn">
-        <%= link_to 'Delete', post_path(@post.id), mathod: :delete %>
+        <%= link_to 'Delete', post_path(@post.id), method: :delete %>
       </div>
     </div>
   </div>

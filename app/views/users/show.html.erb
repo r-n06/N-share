@@ -1,0 +1,27 @@
+<div class="user-show">
+  <div class="user-show-nickname">
+    <%= @nickname %>
+  </div>
+  <div class="user-show-info">
+    <div class="user-posts">
+      <% @posts.each do |post| %>
+        <div class="user-content_post">
+          <div class="user-post-each">
+            <%= image_tag post.image, class:"user-post-image" %>
+            <div class="user-post-name">
+              <%= post.name %>
+            </div>
+            <p><%= post.text %></p>
+            <ul class="tag">
+              <li class="tag-list">
+                <% post.tags.each do |tag| %>
+                  #<%= tag.tagname %>
+                <% end%>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
