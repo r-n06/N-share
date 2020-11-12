@@ -56,29 +56,22 @@
 
 ## 本番環境
 - GitHub：https://github.com/r-n06/N-share
-- デプロイ先：
-- Basic認証のID・password
-  - ID：test
-  - password：1234
-- テストアカウント
-  - email：aa＠bb.com
-  - password：test1234
 
 ## DEMO
 ### トップ画面
-https://user-images.githubusercontent.com/71483157/98909116-b8798280-2504-11eb-94ac-04f5b4661202.jpeg
+![トップ画面](https://user-images.githubusercontent.com/71483157/98909116-b8798280-2504-11eb-94ac-04f5b4661202.jpeg)
 
 ### 投稿画面
-https://user-images.githubusercontent.com/71483157/98909186-d34bf700-2504-11eb-9787-a546ce144509.jpeg
+![投稿画面](https://user-images.githubusercontent.com/71483157/98909186-d34bf700-2504-11eb-9787-a546ce144509.jpeg)
 
 ### 投稿詳細画面
-https://user-images.githubusercontent.com/71483157/98910951-363e8d80-2507-11eb-9350-2ab3cfbfc9f3.jpeg
+![投稿詳細画面](https://user-images.githubusercontent.com/71483157/98910951-363e8d80-2507-11eb-9350-2ab3cfbfc9f3.jpeg)
 
 ### 編集画面
-https://user-images.githubusercontent.com/71483157/98911132-7736a200-2507-11eb-9bbe-2d0246f251b1.jpeg
+![編集画面](https://user-images.githubusercontent.com/71483157/98911132-7736a200-2507-11eb-9bbe-2d0246f251b1.jpeg)
 
 ### ユーザー登録画面
-https://user-images.githubusercontent.com/71483157/98915161-e19e1100-250c-11eb-9a03-56d08e347804.jpeg
+![ユーザー登録画面](https://user-images.githubusercontent.com/71483157/98915161-e19e1100-250c-11eb-9a03-56d08e347804.jpeg)
 
 ## 開発環境
 - 言語：Ruby（2.6.5）, HTML, CSS
@@ -93,3 +86,4 @@ https://user-images.githubusercontent.com/71483157/98915161-e19e1100-250c-11eb-9
 - アイコン表示機能
 
 ## DB設計
+![DB設計](https://user-images.githubusercontent.com/71483157/98918885-84f12500-2511-11eb-8eaa-3c72c74aa68f.jpeg)
