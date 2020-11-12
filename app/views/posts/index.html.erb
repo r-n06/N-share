@@ -1,31 +1,37 @@
 <div class="contents">
-  <div class="post-search">
-    <h1>タグで探す</h1>
-    <ul><% @tag_lists.each do |list| %>
-      <li><%= link_to list.tagname, posts_path(tag_id: list.id), class:"tag_list" %></li>
-    </ul>
-    <% end %>
-  </div>
-  <% @posts.each do |post| %>
-    <div class="post">
-      <div class="content_post">
-        <div class="post-each">
-          <%= link_to post_path(post.id) do %>
-            <%= image_tag post.image, class:"post-image" %>
-          <% end %>
-          <div class="name">
-            <%= post.name %>
-          </div>
-          <p><%= post.text %></p>
-          <ul class="tag">
-            <li class="tag-list">
-              <% post.tags.each do |tag| %>
-                <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
-              <% end%>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <div class="post-side">
+    <div class="post-search">
+      <div class="search-tag-name">Tagで探す</div>
+      <ul><% @tag_lists.each do |list| %>
+        <li><%= link_to "##{list.tagname}", posts_path(tag_id: list.id), class:"tag_list" %></li>
+      </ul>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+  <div class="post-main">
+    <div class="post-main-body">
+      <% @posts.each do |post| %>
+        <div class="post">
+          <div class="content_post">
+            <div class="post-each">
+              <%= link_to post_path(post.id) do %>
+                <%= image_tag post.image, class:"post-image" %>
+              <% end %>
+              <div class="name">
+                <%= post.name %>
+              </div>
+              <p><%= post.text %></p>
+              <ul class="tag">
+                <li class="tag-list">
+                  <% post.tags.each do |tag| %>
+                    <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
+                  <% end%>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
