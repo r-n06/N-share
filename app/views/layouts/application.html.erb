@@ -18,8 +18,8 @@
         <%= link_to 'ログアウト', destroy_user_session_path(params[:id]), method: :delete, class: "logout" %>
         <%= link_to '投稿する', new_post_path, class:"create-post" %>
       <% else %>
-        <%= link_to 'ログイン', new_user_session_path, class: "login" %>
-        <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+        <%= link_to 'Log In', new_user_session_path, class: "login" %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: "sign-up" %>
       <% end %>
       </div>
     </header>

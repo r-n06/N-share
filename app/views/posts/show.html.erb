@@ -1,8 +1,9 @@
-<div class="contents">
-  <div class="post">
-    <div class="content-post">
-      <div class="show-post">
-        <%= image_tag @post.image, class:"post-image" %>
+<div class="post-body">
+  <div class="post-main">
+    <div class="post">
+      <div class="content-post">
+        <div class="show-post">
+          <%= image_tag @post.image, class:"post-image" %>
           <div class="name">
             <%= @post.name %>
           </div>
@@ -10,14 +11,15 @@
           <ul class="tag">
             <li class="tag-list">
               <% @post.tags.each do |tag| %>
-                #<%= tag.tagname %>
+                <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
               <% end%>
             </li>
           </ul>
-
-          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="post-btn">
     <div class="show-btns">
       <div class="edit-btn">
         <%= link_to 'Edit', edit_post_path %>
