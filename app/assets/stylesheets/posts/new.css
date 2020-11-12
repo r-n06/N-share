@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: rgb(247, 229, 247);
+  background-color: rgba(248, 245, 236, 0.945);
 }
 
 .new-post-form {
@@ -23,7 +23,7 @@
 .post-new-label {
   font-size: 25px;
   font-weight: 800;
-  color: pink;
+  color: rgb(63, 45, 45);
 }
 
 .post-send {
