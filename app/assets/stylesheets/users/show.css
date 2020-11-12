@@ -1,8 +1,8 @@
 .user-show {
   height: 100vh;
   width: 100%;
-  background-color: rgb(247, 229, 247);
-
+  background-color: rgba(248, 245, 236, 0.945);
+  overflow: scroll;
 }
 
 .user-show-info {
@@ -13,7 +13,7 @@
 
 .user-show-nickname {
   font-size: 30px;
-  color: rgb(150, 79, 243);
+  color: rgb(63, 45, 45);
   font-weight: 600;
   padding-left: 100px;
 }
@@ -30,7 +30,7 @@
   width: 500px;
   text-align: center;
   padding-top: 30px;
-  border: 2px solid rgb(196, 74, 165);
+  border: 2px solid rgb(63, 45, 45);
   background-color: white;
   table-layout: fixed;
 }
