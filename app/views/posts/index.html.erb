@@ -1,4 +1,11 @@
 <div class="contents">
+  <div class="post-search">
+    <h1>タグで探す</h1>
+    <ul><% @tag_lists.each do |list| %>
+      <li><%= link_to list.tagname, posts_path(tag_id: list.id), class:"tag_list" %></li>
+    </ul>
+    <% end %>
+  </div>
   <% @posts.each do |post| %>
     <div class="post">
       <div class="content_post">
@@ -13,7 +20,7 @@
           <ul class="tag">
             <li class="tag-list">
               <% post.tags.each do |tag| %>
-                #<%= tag.tagname %>
+                <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
               <% end%>
             </li>
           </ul>
