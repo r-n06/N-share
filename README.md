@@ -1,24 +1,95 @@
-# README
+# アプリ名
+### N-share
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの概要
+ネイルに特化した美容の投稿アプリケーション
 
-Things you may want to cover:
+## 制作背景
+投稿系のサイトはたくさんありますが、ネイルに特化したものがなかった為、ネイルに関する情報のみを共有することを目的としました。また、各投稿にタグをつけることで検索しやすくしました。
 
-* Ruby version
+## 要件定義
+- ユーザー管理機能
+  - ユーザー管理とユーザーの投稿を一覧で確認できるようにする為
+    - 新規登録時にnicknameとemail、passwordを入力する。
+    - 2回目以降はemailとpasswordでログインする。
 
-* System dependencies
+- 投稿機能（写真付き）
+  - 写真を投稿し、情報共有できるようにする為
+    - 新規投稿時に写真とタイトル、説明を入れSENDボタンをクリックする。
 
-* Configuration
+- タグ機能
+  - タグで投稿の内容をわかりやすくする為
+    - 投稿時にタグ入力欄に付けたいタグ名を入力する。
 
-* Database creation
+- 検索機能
+  - タグ名を入力し、数ある投稿から欲しい情報を絞る為
+    - サイドバーにある検索バーにタグ名を入れ検索する。
 
-* Database initialization
+- コメント機能
+  - 閲覧者が気になる投稿にコメントし、投稿者とコミュニケーションをとレれるようにする為
+    - 気になる投稿の詳細ページをクリックし、画面下部にあるコメント欄に入力し送信ボタンをクリックする。
 
-* How to run the test suite
+- いいね機能
+  - 気に入った投稿にいいねをし、後に一覧で表示できるようにする為
+    - 各投稿にあるいいねボタンをクリックする。
+    - マイページにあるいいねボタンをクリックすると今までいいねした投稿が一覧で表示される。
 
-* Services (job queues, cache servers, search engines, etc.)
+- フォロー機能
+  - 気になる投稿者や友人など、繋がりたいユーザーをフォローすることで、フォローしたユーザーの詳細ページを閲覧できるようにする為
+    - 気になる投稿の詳細ページにあるフォローをクリックする。
 
-* Deployment instructions
+- アイコン表示機能
+  - ユーザーのイメージを一目でわかるようにする為
+    - ユーザー登録時に画像を選択するとアイコンの設定ができる。（選択しなくても登録可）
+    - マイページの編集ボタンから画像の変更や追加ができる。
 
-* ...
+
+## 実装機能
+- 新規投稿・編集・削除機能
+- ユーザー管理機能（Gem：devise）
+- タグ機能
+
+## 目指した課題解決
+- ペルソナ：20代女性・おしゃれが好き・オフィスワーカー
+- 課題：投稿系サイトにはジャンルに囚われず投稿できる反面、欲しい情報だけを得ることが難しいことが多いことです。
+- 解決策：美容系に特化した投稿アプリケーションがあればより細かい情報をピンポイントに得られると考えました。
+
+## 本番環境
+- GitHub：https://github.com/r-n06/N-share
+- デプロイ先：
+- Basic認証のID・password
+  - ID：test
+  - password：1234
+- テストアカウント
+  - email：aa＠bb.com
+  - password：test1234
+
+## DEMO
+### トップ画面
+https://user-images.githubusercontent.com/71483157/98909116-b8798280-2504-11eb-94ac-04f5b4661202.jpeg
+
+### 投稿画面
+https://user-images.githubusercontent.com/71483157/98909186-d34bf700-2504-11eb-9787-a546ce144509.jpeg
+
+### 投稿詳細画面
+https://user-images.githubusercontent.com/71483157/98910951-363e8d80-2507-11eb-9350-2ab3cfbfc9f3.jpeg
+
+### 編集画面
+https://user-images.githubusercontent.com/71483157/98911132-7736a200-2507-11eb-9bbe-2d0246f251b1.jpeg
+
+### ユーザー登録画面
+https://user-images.githubusercontent.com/71483157/98915161-e19e1100-250c-11eb-9a03-56d08e347804.jpeg
+
+## 開発環境
+- 言語：Ruby（2.6.5）, HTML, CSS
+- フレームワーク：Ruby on Rails（6.0.0）
+- DB：MySQL（5.6.50）
+
+## 課題や今後実装したい機能
+- いいね機能
+- コメント機能
+- フォロー機能
+- ユーザー情報の編集機能
+- アイコン表示機能
+
+## DB設計
