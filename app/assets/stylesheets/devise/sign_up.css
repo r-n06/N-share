@@ -45,7 +45,7 @@
   justify-content: center;
 }
 
-.sign-up-btn {
+.sign-up-btn, .login-btn {
   color: rgb(63, 45, 45);
   font-size: 20px;
   font-weight: 600;
