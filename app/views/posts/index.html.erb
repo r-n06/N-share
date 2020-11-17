@@ -2,18 +2,9 @@
   <div class="post-side">
     <div class="post-search">
       <div class="search-tag-name">Tagで探す</div>
-      <%= form_with(url: search_posts_path, local: true, method: :get, class:"search-form") do |f| %>
-        <%= f.text_field :keyword, placeholder: "Tag名を入力する", class:"search-input" %>
-        <%= f.submit "検索", class:"search-btn" %>
-      <% end %>
-      <%= form_with url: search_posts_path, method: :get, class:"search-box", local: true do %>
-        <%= select_tag :tag_id,
-          options_from_collection_for_select(Tag.all, :id, :tagname, params[:tag_id]),
-          {
-            prompt: 'タグで絞り込み',
-            class: 'select-tag',
-            onchange: 'submit(this.form);'
-          }%>
+      <ul><% @tag_lists.each do |list| %>
+        <li><%= link_to "##{list.tagname}", posts_path(tag_id: list.id), class:"tag_list" %></li>
+      </ul>
       <% end %>
     </div>
   </div>
@@ -23,9 +14,6 @@
         <div class="post">
           <div class="content_post">
             <div class="post-each">
-              <div class="post-user-nickname">
-                <%= link_to "#{post.user.nickname}", "#" %>
-              </div>
               <%= link_to post_path(post.id) do %>
                 <%= image_tag post.image, class:"post-image" %>
               <% end %>
