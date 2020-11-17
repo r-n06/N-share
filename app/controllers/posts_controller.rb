@@ -54,19 +54,9 @@ class PostsController < ApplicationController
     @tags = []
     split_keyword.each do |keyword|
       next if keyword == ""
-      @tags += Tag.where(['tagname LIKE ?', "%#{params[:keyword]}%"] )
+      @tags += Tag.order(created_at: :desc).where(['tagname LIKE ?', "%#{params[:keyword]}%"] )
       end
     @tags.uniq!
-    @tags.each do |tag|
-      count = (@tags.length)
-      tag_count = count - 1
-      while count = 0
-        @tag = []
-        @tag << @tags[tag_count]
-        count -= 1
-      return end
-    end
-    render json:{ keyword: @tags }
   end
 
   private
@@ -84,14 +74,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def self.posts_search(search)
-    if search != ""
-      Post.where(['tagname LIKE ? OR name LIKE ?', "%#{search}%", "%#{search}%"])
-    else
-      Post.all
-    end
   end
 
   def save_posts(tags)
