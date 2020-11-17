@@ -16,6 +16,30 @@
   list-style: none;
 }
 
+.search-input {
+  height: 30px;
+}
+
+.search-btn {
+  font-size: 15px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: rgba(248, 245, 236, 0.945);
+  border-style: 1px solid rgb(63, 45, 45);
+  color: rgb(63, 45, 45);
+}
+
+.select-tag {
+  font-size: 15px;
+  height: 30px;
+  width: 150px;
+  padding-top: 5px;
+  background-color: rgba(248, 245, 236, 0.945);
+  border-style: none;
+  color: rgb(63, 45, 45);
+}
+
 .post-main {
   height: 100%;
   width: calc( 100% - 300px );
