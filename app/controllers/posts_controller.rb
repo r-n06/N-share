@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:search].present?
       posts = Post.posts_serach(params[:search])
     elsif params[:tag_id].present?
-      @tag = Tag.find(params[:tag_id])
+      @tag = Tag.find(params[:tag_id]).posts :Post.all
       post = @tag.posts.order(created_at: :desc)
     end
     @tag_lists = Tag.all
@@ -37,7 +37,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      binding.pry
       redirect_to root_path
     else
       render :edit
@@ -50,9 +49,14 @@ class PostsController < ApplicationController
   end
 
   def search
-    return nill if params[:keyword] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
-    render json:{ keyword: tag }
+    redirect_to root_path if params[:keyword] == ""
+    split_keyword = params[:keyword].to_s.split(/[[:blank:]]+/)
+    @tags = []
+    split_keyword.each do |keyword|
+      next if keyword == ""
+      @tags += Tag.order(created_at: :desc).where(['tagname LIKE ?', "%#{params[:keyword]}%"] )
+      end
+    @tags.uniq!
   end
 
   private
@@ -72,12 +76,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def self.posts_search(search)
-    Post.where(['tagname LIKE ? OR name LIKE ?', "%#{search}%", "%#{search}%"])
-  end
-
   def save_posts(tags)
-    current_tags = seif.tags.pluk(:tag_name) unless self.tags.nill?
+    current_tags = self.tags.pluk(:tag_name) unless self.tags.nill?
     old_tags = current_tags - tags
     new_tags = tags - current_tags
 

@@ -19,27 +19,26 @@
   </div>
   <div class="post-main">
     <div class="post-main-body">
-      <% @posts.each do |post| %>
+      <% @tags.each do |tag_id|%>
         <div class="post">
           <div class="content_post">
             <div class="post-each">
-              <div class="post-user-nickname">
-                <%= link_to "#{post.user.nickname}", "#" %>
-              </div>
-              <%= link_to post_path(post.id) do %>
-                <%= image_tag post.image, class:"post-image" %>
+              <% tag_id.posts.each do |post| %>
+                <%= link_to post_path(post.id) do %>
+                  <%= image_tag post.image, class:"post-image" %>
+                <% end %>
+                <div class="name">
+                  <%= post.name %>
+                </div>
+                <p><%= post.text %></p>
+                <ul class="tag">
+                  <li class="tag-list">
+                    <% post.tags.each do |tag| %>
+                      <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
+                    <% end%>
+                  </li>
+                </ul>
               <% end %>
-              <div class="name">
-                <%= post.name %>
-              </div>
-              <p><%= post.text %></p>
-              <ul class="tag">
-                <li class="tag-list">
-                  <% post.tags.each do |tag| %>
-                    <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
-                  <% end%>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
