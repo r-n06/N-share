@@ -3,6 +3,9 @@
     <div class="post">
       <div class="content-post">
         <div class="show-post">
+          <div class="post-user-nickname">
+            <%= link_to "#{post.user.nickname}", "#" %>
+          </div>
           <%= image_tag @post.image, class:"post-image" %>
           <div class="name">
             <%= @post.name %>
