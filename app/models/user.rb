@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :liking_posts, through: :likes, source: :post
   
   validates :nickname, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
