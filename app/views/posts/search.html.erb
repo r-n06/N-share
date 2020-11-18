@@ -25,7 +25,7 @@
             <div class="post-each">
               <% tag_id.posts.each do |post| %>
                 <div class="post-user-nickname">
-                  <%= link_to "#{post.user.nickname}", "#" %>
+                  <%= link_to "#{post.user.nickname}", user_path(post.user.id) %>
                 </div>
                 <%= link_to post_path(post.id) do %>
                   <%= image_tag post.image, class:"post-image" %>

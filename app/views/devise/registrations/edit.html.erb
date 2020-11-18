@@ -1,43 +1,35 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="sign-up-header">
+    <div class="sign-up-font">
+      <h2>Edit User</h2>
+    </div>
   </div>
+  <div class="sign-up-main">
+  <%= form_with model: @user, url: edit_user_registration_path,class: "sign-up-form", local: true do |f| %>
+    <%= render "devise/shared/error_messages", model: f.object %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="field">
+      <%= f.label :nickname, class: "field-font" %>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "off", class: "field-box" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, class: "field-font" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "field-box", placeholder:"PC・ケータイどちらでも可" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class: "field-font" %>
+      <%= f.password_field :password, autocomplete: "off", class: "field-box", placeholder:"6文字以上の半角英数字" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, class: "field-font" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "field-box", placeholder:"Password確認用" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class:"sign-up-btn" %>
+    </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
