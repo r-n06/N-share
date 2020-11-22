@@ -1,0 +1,38 @@
+<div class="contents">
+  <div class="post-main">
+    <div class="post-main-body">
+      <% if @like_list.present? %>
+        <% @like_list.each do |post| %>
+          <div class="post">
+            <div class="content_post">
+              <div class="post-each">
+                <div class="post-user-nickname">
+                  <%= link_to "#{post.user.nickname}", user_path(post.user.id) %>
+                </div>
+                <%= link_to post_path(post.id) do %>
+                  <%= image_tag post.image, class:"post-image" %>
+                <% end %>
+                <div class="name-likes">
+                  <div class="name">
+                    <%= post.name %>
+                  </div>
+                  <div class="likes" id="post_<%= post.id %>">
+                    <%= render 'posts/post', post: post %>
+                  </div>
+                </div>
+                <p><%= post.text %></p>
+                <ul class="tag">
+                  <li class="tag-list">
+                    <% post.tags.each do |tag| %>
+                      <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
+                    <% end%>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
