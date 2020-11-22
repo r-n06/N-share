@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "posts#index"
-  post "/likes/:post_id", to: "likes#like", as: 'like'
-  delete "/likes/:post_id", to: "likes#unlike", as: 'unlike'
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
   resources :posts do
     collection do
       get 'search'

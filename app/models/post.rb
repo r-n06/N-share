@@ -3,8 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :post_tags
   has_many :tags, through: :post_tags
-  has_many :likes, dependent: :destroy
-  has_many :liking_users, through: :likes, source: :user
+  has_many :likes
 
   with_options presence: true do
     validates :name

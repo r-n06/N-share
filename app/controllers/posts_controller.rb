@@ -19,10 +19,8 @@ class PostsController < ApplicationController
   
   def create
     @post = PostsTag.new(post_params)
-    tag_list = params[:post][:tag_tagname].split(nill)
     if @post.valid?
       @post.save
-      @post.save_posts(tag_list)
       redirect_to root_path
     else
       render :new

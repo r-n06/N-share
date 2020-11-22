@@ -20,10 +20,10 @@
   <div class="post-main">
     <div class="post-main-body">
       <% @tags.each do |tag_id|%>
-        <div class="post">
-          <div class="content_post">
-            <div class="post-each">
-              <% tag_id.posts.each do |post| %>
+        <% tag_id.posts.each do |post| %>
+          <div class="post">
+            <div class="content_post">
+              <div class="post-each">
                 <div class="post-user-nickname">
                   <%= link_to "#{post.user.nickname}", user_path(post.user.id) %>
                 </div>
@@ -33,6 +33,17 @@
                 <div class="name">
                   <%= post.name %>
                 </div>
+                <% if current_user.liked_by?(post.id) %>
+                  <div>
+                    <%= link_to "unlike", destroy_like_path(post.id), method: :delete %><%= post.likes.count %>
+                  </div>
+                <% else %>
+                  <div>
+                    <%= link_to create_like_path(post.id), method: :post do %>
+                      <%= icon("fas", "heart") %> <%= post.likes.count %>
+                    <% end %>
+                  </div>
+                <% end %>
                 <p><%= post.text %></p>
                 <ul class="tag">
                   <li class="tag-list">
@@ -41,10 +52,10 @@
                     <% end%>
                   </li>
                 </ul>
-              <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
