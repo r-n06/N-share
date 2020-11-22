@@ -10,6 +10,17 @@
           <div class="name">
             <%= @post.name %>
           </div>
+          <% if current_user.liked_by?(@post.id) %>
+            <div>
+              <%= link_to "unlike", destroy_like_path(@post.id), method: :delete %><%= post.likes.count %>
+            </div>
+          <% else %>
+            <div>
+              <%= link_to create_like_path(@post.id), method: :post do %>
+                <%= icon("fas", "heart") %> <%= @post.likes.count %>
+              <% end %>
+            </div>
+          <% end %>
           <p><%= @post.text %></p>
           <ul class="tag">
             <li class="tag-list">
