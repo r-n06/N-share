@@ -7,7 +7,7 @@
       <div class="user-edit-btn">
         <%= link_to "Edit", edit_user_registration_path(params[:id]) %>
       </div>
-      <%= link_to "#" do %>
+      <%= link_to likes_users_path do %>
         <div class="like-btn">
           <%= image_tag "like-icon.jpg", class:"like-icon" %>
           <div class="like-font">いいね</div>
@@ -18,20 +18,32 @@
   <div class="user-show-info">
     <div class="user-posts">
       <% @posts.each do |post| %>
-        <div class="user-content_post">
-          <div class="user-post-each">
-            <%= image_tag post.image, class:"user-post-image" %>
-            <div class="user-post-name">
-              <%= post.name %>
+        <div class="post">
+          <div class="content_post">
+            <div class="post-each">
+              <div class="post-user-nickname">
+                <%= link_to "#{post.user.nickname}", user_path(post.user.id) %>
+              </div>
+              <%= link_to post_path(post.id) do %>
+                <%= image_tag post.image, class:"post-image" %>
+              <% end %>
+              <div class="name-likes">
+                <div class="name">
+                  <%= post.name %>
+                </div>
+                <div class="likes" id="post_<%= post.id %>">
+                  <%= render 'posts/post', post: post %>
+                </div>
+              </div>
+              <p><%= post.text %></p>
+              <ul class="tag">
+                <li class="tag-list">
+                  <% post.tags.each do |tag| %>
+                    <%= link_to "##{tag.tagname}", posts_path(params[:tag_id]) %>
+                  <% end%>
+                </li>
+              </ul>
             </div>
-            <p><%= post.text %></p>
-            <ul class="tag">
-              <li class="tag-list">
-                <% post.tags.each do |tag| %>
-                  #<%= tag.tagname %>
-                <% end%>
-              </li>
-            </ul>
           </div>
         </div>
       <% end %>
