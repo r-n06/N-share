@@ -1,27 +1,24 @@
-<div class="sign-up">
-  <div class="sign-up-header">
-    <div class="sign-up-font">
-      <h2>Sign In</h2>
-    </div>
+<div class="sign-up-header">
+  <div class="sign-up-font">
+    Sign In
+  </div>
+</div>
+
+<div class="sign-up-main">
+<%= form_with model: @user, url: user_session_path, class: "sign-up-form", local: true do |f| %>
+  <%= render "devise/shared/error_messages", model: f.object %>
+  <div class="field">
+    <%= f.label :email, class: "field-font" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "field-box", placeholder:"PC・ケータイどちらでも可" %>
   </div>
 
-  <div class="sign-up-main">
-  <%= form_with model: @user, url: user_session_path, class: "sign-up-form", local: true do |f| %>
-    <%= render "devise/shared/error_messages", model: f.object %>
-    <div class="field">
-      <%= f.label :email, class: "field-font" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "field-box", placeholder:"PC・ケータイどちらでも可" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password, class: "field-font" %>
-      <%= f.password_field :password, autocomplete: "off", class: "field-box", placeholder:"6文字以上の半角英数字" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Log in", class:"login-btn" %>
-    </div>
-  <% end %>
+  <div class="field">
+    <%= f.label :password, class: "field-font" %>
+    <%= f.password_field :password, autocomplete: "off", class: "field-box", placeholder:"6文字以上の半角英数字" %>
   </div>
 
+  <div class="actions">
+    <%= f.submit "Log in", class:"login-btn" %>
+  </div>
+<% end %>
 </div>
