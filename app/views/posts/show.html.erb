@@ -10,8 +10,8 @@
           <div class="name">
             <%= @post.name %>
           </div>
-          <div class="likes" id="post_<%= post.id %>">
-            <%= render 'post', post: post %>
+          <div class="likes" id="post_<%= @post.id %>">
+            <%= render 'post', post: @post %>
           </div>
           <p><%= @post.text %></p>
           <ul class="tag">
@@ -22,6 +22,27 @@
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="comment-area">
+    <div class="container">
+      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントする", rows: "2", class:"comment-box" %>
+        <%= f.submit "SEND", class:"comment-submit-btn" %>
+      <% end %>
+      <div class="comment-show">
+        <h4>＊コメント一覧＊</h4>
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <p>
+              <div>
+                <%= link_to comment.user.nickname, "users/#{comment.user_id}" %> :
+                <%= comment.comment %>
+              </div>
+            </p>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
