@@ -59,6 +59,12 @@ class PostsController < ApplicationController
     @tags.uniq!
   end
 
+  def tag_search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['tagname LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
   def post_params
