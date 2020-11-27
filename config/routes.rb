@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
   resources :posts do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
+      get 'tag_search'
     end
   end
   resources :users, only: [:show, :edit, :update] do

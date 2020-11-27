@@ -26,8 +26,10 @@
               <div class="post-user-nickname">
                 <%= link_to "#{post.user.nickname}", user_path(post.user.id) %>
               </div>
-              <%= link_to post_path(post.id) do %>
-                <%= image_tag post.image, class:"post-image" %>
+              <% if user_signed_in?%>
+                <%= link_to post_path(post.id) do %>
+                  <%= image_tag post.image, class:"post-image" %>
+                <% end %>
               <% end %>
               <div class="name-likes">
                 <div class="name">
