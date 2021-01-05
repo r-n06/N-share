@@ -48,6 +48,10 @@
 - 新規投稿・編集・削除機能
 - ユーザー管理機能（Gem：devise）
 - タグ機能
+- タグ検索機能
+- いいね機能
+- コメント機能
+- ユーザー情報の編集機能
 
 ## 目指した課題解決
 - ペルソナ：20代女性・おしゃれが好き・オフィスワーカー
@@ -59,19 +63,19 @@
 
 ## DEMO
 ### トップ画面
-![トップ画面](https://user-images.githubusercontent.com/71483157/98909116-b8798280-2504-11eb-94ac-04f5b4661202.jpeg)
+![トップ画面](https://user-images.githubusercontent.com/71483157/103710986-b231ef00-4ff9-11eb-8177-9a8bb4858892.png)
 
 ### 投稿画面
-![投稿画面](https://user-images.githubusercontent.com/71483157/98909186-d34bf700-2504-11eb-9787-a546ce144509.jpeg)
+![投稿画面](https://user-images.githubusercontent.com/71483157/103711243-5caa1200-4ffa-11eb-8f82-d8c6363950c7.jpeg)
 
 ### 投稿詳細画面
-![投稿詳細画面](https://user-images.githubusercontent.com/71483157/98910951-363e8d80-2507-11eb-9350-2ab3cfbfc9f3.jpeg)
+![投稿詳細画面](https://user-images.githubusercontent.com/71483157/103711316-7f3c2b00-4ffa-11eb-89cc-ab5ce224cb44.jpeg)
 
 ### 編集画面
-![編集画面](https://user-images.githubusercontent.com/71483157/98911132-7736a200-2507-11eb-9bbe-2d0246f251b1.jpeg)
+![編集画面](https://user-images.githubusercontent.com/71483157/103711509-f1ad0b00-4ffa-11eb-8386-27d32af71006.jpeg)
 
 ### ユーザー登録画面
-![ユーザー登録画面](https://user-images.githubusercontent.com/71483157/98915161-e19e1100-250c-11eb-9a03-56d08e347804.jpeg)
+![ユーザー登録画面](https://user-images.githubusercontent.com/71483157/103711430-c1fe0300-4ffa-11eb-9ba1-e19f9c468728.jpeg)
 
 ## 開発環境
 - 言語：Ruby（2.6.5）, HTML, CSS
@@ -79,10 +83,7 @@
 - DB：MySQL（5.6.50）
 
 ## 課題や今後実装したい機能
-- いいね機能
-- コメント機能
 - フォロー機能
-- ユーザー情報の編集機能
 - アイコン表示機能
 
 ## DB設計
