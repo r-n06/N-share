@@ -60,6 +60,10 @@
 
 ## 本番環境
 - GitHub：https://github.com/r-n06/N-share
+- Heroku：https://app-n-share.herokuapp.com/
+  - テストアカウント
+    - email：aa＠bb.com
+    - password：test1234
 
 ## DEMO
 ### トップ画面
